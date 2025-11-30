@@ -1,15 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="fa">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <title>Run an Empire Demo</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 <style>
-  body, html { margin:0; padding:0; height:100%; width:100%; }
+  html, body { margin:0; padding:0; height:100%; width:100%; font-family: sans-serif; }
   #map { height:100%; width:100%; }
+  #login { position:absolute; top:10px; left:10px; background:white; padding:10px; z-index:1000; border-radius:5px; }
+  #logout { display:none; margin-top:10px; }
 </style>
 </head>
 <body>
+<div id="login">
+  <div id="login-form">
+    <input type="text" id="user" placeholder="نام کاربری"><br>
+    <input type="color" id="color" value="#ff0000"><br>
+    <button id="login-btn">ثبت نام / ورود</button>
+  </div>
+  <div id="logout">
+    وارد شده با: <span id="username"></span>
+    <button id="logout-btn">خروج</button>
+  </div>
+</div>
 <div id="map"></div>
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="main.js"></script>
